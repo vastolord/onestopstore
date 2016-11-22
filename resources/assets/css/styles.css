@@ -1,0 +1,360 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+
+body {
+    padding-top: 0px;
+    background-color: #f5f5f5;
+    background-image: url("../img/greyzz_@2X.png");
+    background-repeat: repeat;
+
+}
+
+footer {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #fff;
+}
+
+.carousel-overlay {
+  z-index: 2;
+  position: absolute;
+  /*left: 30px;
+  top: 30px;*/
+
+}
+
+.carousel-icon {
+position: absolute;
+z-index: 1;
+right:0;
+height: top;
+    -webkit-filter: drop-shadow(0px 3px 10px rgba(0,0,0,.8));
+        filter: drop-shadow(0px 0px 10px rgba(0,0,0,.8));
+
+}
+
+
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 768px) {
+    .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+    .row-offcanvas-left .sidebar-offcanvas {
+        left: -33%;
+    }
+    .row-offcanvas-left.active {
+        left: 33%;
+    }
+    .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 33%;
+        margin-left: 10px;
+    }
+}
+
+
+/* Sidebar navigation */
+
+.nav-sidebar {
+    background-color: #f5f5f5;
+    margin-right: -15px;
+    margin-bottom: 20px;
+    margin-left: -15px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px;
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+
+/*carousel css*/
+
+#featured {
+    max-height: 200px;
+    min-width: 300px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 0px;
+}
+
+.item {
+    max-height: 200px;
+    min-width: 300px;
+    height: 30vw;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    /*-webkit-filter: blur(1px) opacity(95%);*/
+    /* Chrome, Safari, Opera */
+    /*filter: blur(1px) opacity(95%);*/
+
+}
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+.carousel-indicators:hover {
+    opacity: 1;
+    transition: .3s;
+}
+
+.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+
+
+/* prevent blurry elements when it's placed on half a pixel. */
+
+.item {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+/*
+WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+now override the 3.3 new styles for modern browsers & apply opacity
+*/
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next, .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev, .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left, .carousel-fade .carousel-inner > .item.prev.right, .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.images-carousel{
+    opacity: .6;
+    z-index: 10 !important;
+}
+
+
+/* remove background gradients on controls */
+
+.carousel-control {
+    background-image: none !important;
+    opacity: 0.1;
+}
+
+.carousel-indicators {
+    background-image: none !important;
+    opacity: 0.3;
+}
+
+/* Fade controls with items */
+
+
+
+/*Stylized Caption*/
+
+.carousel-caption {
+    font-family: 'Sportrop', sans-serif !important;
+    /*color: #4E2F34;*/
+    font-weight: bolder;
+    color: Ivory;
+    font-size: 2em;
+    text-shadow: .5px 1px 3px #000000;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+    text-shadow: 2px 2px 4px #000000;
+
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+
+/*
+background:
+linear-gradient(135deg, transparent 22px, #000 22px, #000 24px, transparent 24px, transparent 67px, #000 67px, #000 69px, transparent 69px),
+linear-gradient(225deg, transparent 22px, #000 22px, #000 24px, transparent 24px, transparent 67px, #000 67px, #000 69px, transparent 69px)0 64px;
+background-color:transparent;
+background-size: 20px 20px;
+*/
+/*
+    -webkit-animation: neon2 .8s ease-in-out infinite alternate;
+    -moz-animation: neon2 .8s ease-in-out infinite alternate;
+    animation: neon2 .8s ease-in-out infinite alternate;
+*/
+}
+
+.carousel-caption:hover {
+    /*color: #FF1177;*/
+    color: Ivory;
+/*    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+*/
+
+    -webkit-animation: neon2 .8s ease-in-out infinite alternate;
+    -moz-animation: neon2 .8s ease-in-out infinite alternate;
+    animation: neon2 .8s ease-in-out infinite alternate;
+
+
+    /*
+    -webkit-animation: neon1 .7s ease-in-out infinite alternate;
+    -moz-animation: neon1 .7s ease-in-out infinite alternate;
+    animation: neon1 .7s ease-in-out infinite alternate;*/
+}
+
+
+/*glow for webkit 40-20*/
+
+@-webkit-keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #8B889C, 0 0 70px #8B889C;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #8B889C, 0 0 35px #8B889C;
+    }
+}
+/*glow for mozilla*/
+
+@-moz-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #8B889C, 0 0 70px #8B889C;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #8B889C, 0 0 35px #8B889C;
+  }
+}
+
+/*glow*/
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #8B889C, 0 0 70px #8B889C;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #8B889C, 0 0 35px #8B889C;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #01E2F4, 0 0 20px #01E2F4, 0 0 30px #0428F3, 0 0 40px #010572, 0 0 70px #00033F;
+  }
+  to {
+    text-shadow: 0 0 5px #01E2F4, 0 0 10px #01E2F4, 0 0 15px #0428F3, 0 0 20px #010572, 0 0 35px #00033F;
+  }
+}
+
+/*Name Font Style*/
+
+
+/* russo-one-regular - latin */
+
+@font-face {
+    font-family: 'Russo One';
+    font-weight: normal;
+    font-style: normal;
+    /* IE9 Compat Modes */
+    src: local('Russo One'), local('RussoOne-Regular'), url('../fonts/RussoOne-Regular.ttf') format('truetype');
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Beon';
+    font-weight: normal;
+    font-style: normal;
+    /* IE9 Compat Modes */
+    src: local('Beon'), local('Beon'), url('../fonts/Beon.ttf') format('truetype');
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Sportrop';
+    font-weight: normal;
+    font-style: normal;
+    /* IE9 Compat Modes */
+    src: local('Sportrop'), local('Sportrop'), url('../fonts/Sportrop.ttf') format('truetype');
+    /* Legacy iOS */
+}
+
+
+/*Name Font Style Ends*/
+
+
+/*
+.prev.left,
+.next.right {
+    opacity: 0;
+    z-index: 1;
+}
+.active.left,
+.active.right {
+    opacity: 0;
+    z-index: 2;
+}
+*/
+
+/*mobile-search*/
+
+/*mobile-search-ends*/
